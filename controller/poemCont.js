@@ -84,7 +84,9 @@ try {
     const updatepoem= await poemModel.findByIdAndUpdate(poem, {new:true})
 
     if(!poem){
-        escape.status(400).json(`poem updated successfully`)
+        escape.status(400).json(`poem not updated successfully`)
+    }else{
+        res.status(200).json(`poem updated successfully`)
     }
 } catch (error) {
     res.send(error.message)
